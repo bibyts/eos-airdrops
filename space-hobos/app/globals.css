@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-void-900 text-slate-200 font-body antialiased;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(157, 78, 221, 0.18), transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(61, 214, 196, 0.12), transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(255, 122, 69, 0.12), transparent 55%);
+  background-attachment: fixed;
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 24px rgba(157, 78, 221, 0.55);
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-ember to-plasma text-white shadow-lg shadow-plasma/30 hover:shadow-plasma/60 hover:-translate-y-0.5;
+  }
+
+  .btn-ghost {
+    @apply btn border border-white/15 text-slate-200 hover:border-white/40 hover:bg-white/5;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.25em] text-signal;
+  }
+}
+
+/* Procedural starfield rendered with box-shadows (no images needed). */
+.stars,
+.stars2,
+.stars3 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
